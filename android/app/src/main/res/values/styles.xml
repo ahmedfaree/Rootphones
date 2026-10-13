@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- الثيم الخاص بشاشة البدء (Splash Screen) قبل تحميل التطبيق -->
+    <style name="LaunchTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- تحديد الخلفية التي تظهر عند إقلاع التطبيق -->
+        <item name="android:windowBackground">@drawable/launch_background</item>
+        <!-- إخفاء شريط الحالة لتبدو واجهة نظيفة أو جعلها متناسقة مع الأندرويد -->
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <!-- الثيم العادي للتطبيق بعد انتهاء شاشة البدء وبدء عمل Flutter -->
+    <style name="NormalTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- تغيير خلفية النافذة الأساسية لتفادي الوميض الأبيض أثناء التحميل -->
+        <item name="android:windowBackground">?android:colorBackground</item>
+    </style>
+</resources>
