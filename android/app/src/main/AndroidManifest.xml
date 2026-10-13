@@ -1,0 +1,56 @@
+<manifest xmlns:android="http://android.com"
+    package="com.example.rootphones"> <!-- استبدل هذا باسم الحزمة الخاص بمشروعك إن كان مختلفاً -->
+
+    <!-- الصلاحيات المطلوبة للتفاعل مع النظام وإعادة التشغيل -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.REBOOT" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+    <application
+        android:label="Rootphones"
+        android:name="${applicationName}"
+        android:icon="@mipmap/ic_launcher"
+        android:allowBackup="true"
+        android:theme="@style/LaunchTheme">
+        
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:taskAffinity=""
+            android:theme="@style/LaunchTheme"
+            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+            android:hardwareAccelerated="true"
+            android:windowSoftInputMode="adjustResize">
+            
+            <!-- تحديد الثيم المبدئي للتطبيق عند التشغيل -->
+            <meta-data
+                android:name="io.flutter.embedding.android.NormalTheme"
+                android:resource="@style/NormalTheme" />
+            
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <!-- ميتا داتا لتشغيل فلوتر -->
+        <meta-data
+            android:name="flutterEmbedding"
+            android:value="2" />
+    </application>
+
+    <!-- السماح للتطبيق بتنفيذ استعلامات وإرسال أوامر عبر نظام الأندرويد -->
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.MAIN" />
+        </intent>
+    </queries>
+</manifest>
+```
+
+### 💡 أين تضع هذا الملف؟
+يجب وضع هذا الكود بالكامل داخل مشروع Flutter في المسار التالي:
+```text
+android/app/src/main/AndroidManifest.xml
+```
